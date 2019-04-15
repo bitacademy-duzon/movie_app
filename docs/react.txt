@@ -1,0 +1,16 @@
+ESLint
+Guide
+Reactjs code snippets
+relative path
+VSCodeReactProjects
+
+$ npm inatall -g create-react-app
+$ create-react-app helloworld
+$ cd helloworld
+$ code .
+
+1.props(data flow) :
+어떻게 부모 컴포넌트가 자식컴포넌트에게 데이터를 전달하는가?
+2.생명주기(Life Circle)
+3.states
+4.AJAX on React
