@@ -31,11 +31,12 @@ const movies = [{
 
 class App extends Component {
   componentWillMount() {
+    // request API
     console.log('componentWillMount() called')
   }
 
   componentDidMount() {
-    // request API
+    // request done
     console.log('componentDidMount() called')
   }
 
