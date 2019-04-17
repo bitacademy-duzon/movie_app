@@ -28,23 +28,25 @@ class App extends Component {
      }
 
     _renderMovies = () => {
-        // const movies = [<Movie/>, <Movie/>, <Movie/>];
         const movies = this.state.movies.map((movie, index) => {
-            console.log(movie);
-            return <Movie title={movie.title} poster={movie.medium_cover_image} key={index}/>
+            return <Movie 
+                title={movie.title} 
+                poster={movie.medium_cover_image}
+                genres={movie.genres}
+                synopsis={movie.synopsis} 
+                key={index}/>
         });
         return movies;
     }
 
     render(){
+        const {movies} = this.state;
         return (
-            <div className='App'>
-                {
-                    (this.state.movies == null) ? "loading" : this._renderMovies()
-                }
+            <div className={ movies ? 'App' : 'App--loading' }>
+                { movies ? this._renderMovies() : "loading" }
             </div>
-    );
-  }
+        );
+    }
 }
 
 export default App;
