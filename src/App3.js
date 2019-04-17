@@ -9,17 +9,23 @@ class App extends Component {
     componentWillMount() {
     }
 
-
     componentDidMount() {
-        fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
-        .then((response) => response.json() )
-        .then((json) => {
-            this.setState({
-                movies: json.data.movies        
-            });
-        })
-        .catch( (err) => console.error( err ) );
+        this._getMovies();
     }
+
+    _getMovies = async () => {
+        const movies = await this._callApi();
+        this.setState({
+            movies: movies        
+        });
+    }
+
+    _callApi = async () => {
+        return fetch('https://yts.am/api/v2/list_movies.json?sort_by=rating')
+        .then( (response) => response.json() )
+        .then( (json) => json.data.movies )
+        .catch( (err) => console.error( err ) );
+     }
 
     _renderMovies = () => {
         // const movies = [<Movie/>, <Movie/>, <Movie/>];
