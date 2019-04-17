@@ -32,11 +32,11 @@ Movie.propTypes ={
     synopsis: PropTypes.string.isRequired
 }
 
-MoviePoster.popTypes = {
+MoviePoster.propTypes = {
     poster: PropTypes.string.isRequired
 }
 
-MovieGenre.popTypes = {
+MovieGenre.propTypes = {
     genre: PropTypes.string.isRequired
 }
 
